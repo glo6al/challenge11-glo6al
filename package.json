@@ -13,7 +13,7 @@
     "node": "^18.5.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19",
-    "jest": "^28.1.2"
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.19"
   }
 }
