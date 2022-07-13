@@ -28,17 +28,14 @@ router.get("/notes/:id", (req, res) => {
 //add route to post a note
 router.post("/notes", (req, res) => {
   //creates unique id for new note
-  //   req.body.id = uuid();
-  //   if (!validateNote(req.body)) {
-  //     res.status(400).send("The note is not properly formatted");
-  //   } else {
-  //     const newNote = createNewNote(req.body, notes);
-  //     res.json(newNote);
-  //   }
-  req.body.id = uuid.v4();
-  const note = createNewNote(req.body, notes);
-  notes.push(req.body);
-  res.json(note);
+  req.body.id = uuid();
+  if (!validateNote(req.body)) {
+    res.status(400).send("The note is not properly formatted");
+  } else {
+    const newNote = createNewNote(req.body, notes);
+    notes.push(req.body);
+    res.json(newNote);
+  }
 });
 
 //add route to delete a note (bonus)
