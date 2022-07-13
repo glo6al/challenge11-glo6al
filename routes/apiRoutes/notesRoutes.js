@@ -1,7 +1,10 @@
-const router = require("express").Router();
-
-module.exports = router;
 //add const
+const router = require("express").Router();
+const { filterByQuery, findById, createNewNote } = require("../../lib/notes");
+let notes = require("../../db/db.json");
+const uuid = require("../../helpers/uuid");
+const path = require("path");
+const fs = require("fs");
 
 //add route to get all notes
 
@@ -12,3 +15,5 @@ module.exports = router;
 //add route to delete a note (bonus)
 
 //export notes router
+
+module.exports = router;
