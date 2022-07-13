@@ -28,7 +28,7 @@ router.get("/notes/:id", (req, res) => {
 //add route to post a note
 router.post("/notes", (req, res) => {
   //creates unique id for new note
-  req.body.id = uuid.v4();
+  req.body.id = uuid();
   if (!validateNote(req.body)) {
     res.status(400).send("The note is not properly formatted");
   } else {
