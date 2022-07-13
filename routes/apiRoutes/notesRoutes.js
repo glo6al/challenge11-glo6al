@@ -1,7 +1,7 @@
 //add const
 const router = require("express").Router();
 const { filterByQuery, findById, createNewNote } = require("../../lib/notes");
-let notes = require("../../db/db.json");
+let { notes } = require("../../db/db.json");
 const uuid = require("uuid");
 const path = require("path");
 const fs = require("fs");
