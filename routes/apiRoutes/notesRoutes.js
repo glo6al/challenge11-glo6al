@@ -27,7 +27,8 @@ router.get("/notes/:id", (req, res) => {
 
 //add route to post a note
 router.post("/notes", (req, res) => {
-  req.body.id = uuid();
+  //creates unique id for new note
+  req.body.id = uuid.v4();
   if (!validateNote(req.body)) {
     res.status(400).send("The note is not properly formatted");
   } else {
@@ -37,6 +38,19 @@ router.post("/notes", (req, res) => {
 });
 
 //add route to delete a note (bonus)
+router.delete("/notes/:id", async (req, res) => {
+  const deletedNote = findById(req.params.id, notes);
+  if (deletedNote) {
+    let originalList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+    const filteredNote = await originalList.filter(
+      (note) => note.id !== req.params.id
+    );
 
+    fs.writeFileSync("./db/db.json", JSON.stringify(filteredNote));
+    const newList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+
+    return res.json(newList);
+  }
+});
 //export notes router
 module.exports = router;
