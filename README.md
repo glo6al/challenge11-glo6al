@@ -26,7 +26,7 @@ In order to install this generator, you will need to have Node.js, Express.js, J
 
 ## Usage Instructions
 
-Once you have installed the generator, you can simply run the command 'node server.js' in order to start the app. Simply open the browser and past https://localhost:3002/notes. Be sure to change the port if 3002 is already in use.
+Once you have installed the generator, you can simply run the command 'node server.js' in order to start the app. Simply open the browser and paste https://localhost:3002/. Be sure to change the port if 3002 is already in use.
 
 ## How to Contribute
 
