@@ -59,5 +59,6 @@ router.delete("/notes/:id", async (req, res) => {
     return res.json(newList);
   }
 });
+
 //export notes router
 module.exports = router;
