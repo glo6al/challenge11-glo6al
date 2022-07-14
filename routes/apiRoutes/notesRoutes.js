@@ -33,7 +33,7 @@ router.post("/notes", (req, res) => {
     res.status(400).send("The note is not properly formatted");
   } else {
     const newNote = createNewNote(req.body, notes);
-    notes.push(req.body);
+    //notes.push(req.body);
     res.json(newNote);
   }
 });
