@@ -44,7 +44,7 @@ router.post("/notes", (req, res) => {
 });
 
 //add route to delete a note (bonus)
-router.delete("/notes/:id", async (req, res) => {
+router.delete("/notes/:id", (req, res) => {
   const deletedNote = findById(req.params.id, notes);
   if (deletedNote) {
     let originalList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
